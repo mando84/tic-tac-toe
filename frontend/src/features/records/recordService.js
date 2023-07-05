@@ -9,7 +9,7 @@ const createRecord = async (recordData, token) => {
     },
   };
 
-  const response = await axios.post(API_URL, recordData, config);
+  const response = await axios.post(API_URL + "game", recordData, config);
 
   return response.data;
 };

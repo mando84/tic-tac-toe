@@ -8,15 +8,13 @@ const getRecords = asyncHandler(async (req, res) => {
 });
 
 const setRecord = asyncHandler(async (req, res) => {
-  if (!req.body.text) {
-    res.status(400);
-    throw new Error("Please add text field");
-  }
-
   const record = await Record.create({
-    text: req.body.text,
+    result: req.body.result,
+    character: req.body.character,
+    firstMove: req.body.firstMove,
     user: req.user.id,
   });
+
   res.status(200).json(record);
   //res.status(200).json({message: 'hey baby'})
 });

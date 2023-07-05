@@ -6,14 +6,23 @@ const recordSchema = mongoose.Schema(
       required: true,
       ref: "User",
     },
-    text: {
+    result: {
       type: String,
-      required: [true, "Please add a text value"],
+      required: true,
+    },
+    character: {
+      type: String,
+      required: true,
+    },
+    firstMove: {
+      type: Boolean,
+      required: true,
     },
   },
+
   {
     timestamps: true,
   }
 );
 
-module.exports = mongoose.model("Record Model", recordSchema);
+module.exports = mongoose.model("Record", recordSchema);
